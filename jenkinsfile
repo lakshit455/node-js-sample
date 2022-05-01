@@ -1,36 +1,17 @@
-pipeline {
+pipeline{
     agent any
-    
-    }
-
+   
     stages{
         stage("npm install"){
             steps{
-                sh ' npm install '
+                sh  ' npm install '
             }
-            
-            }
-              stage("starting server"){
+        }
+            stage("project-maven-build"){
             steps{
-                sh ' node index.js '
+               sh 'node index.js'
+
             }
+        }
             
-            }
-               
-              
-              
-        }
-        
-    post{
-        always{
-            echo "========always========"
-        }
-        success{
-            echo "========pipeline executed successfully ========"
-        }
-        failure{
-            echo "========pipeline execution failed========"
-        }
     }
-  }
-}
