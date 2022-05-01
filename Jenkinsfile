@@ -1,8 +1,9 @@
 pipeline{
     agent any
-   
+    tools 
+
     stages{
-        stage("npm install"){
+        stage("project-maven-test"){
             steps{
                 sh  ' npm install '
             }
@@ -14,4 +15,17 @@ pipeline{
             }
         }
             
+ }
+
+    post{
+        always{
+            echo "========always========"
+        }
+        success{
+            echo "========pipeline executed successfully ========"
+        }
+        failure{
+            echo "========pipeline execution failed========"
+        }
     }
+}
