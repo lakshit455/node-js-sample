@@ -12,7 +12,7 @@ pipeline {
             steps {
               script {
                sh 'docker login -u lakshit45 -p jesuschrist@11'
-               sh 'docker build -t lakshit45/iiii .
+               sh 'docker build -t lakshit45/iiii . '
                sh ' docker push lakshit45/iiii '
               }
             }
